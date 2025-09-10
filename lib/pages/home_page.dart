@@ -20,11 +20,12 @@ class HomePage extends StatelessWidget {
           ),
 
           //Go to user page
+          //should give data in right order when u create router class GoRoute
           ElevatedButton(
             onPressed: () {
-              GoRouter.of(
-                context,
-              ).push("/user", extra: {"name": "Thisara C Prasanga", "age": 24});
+              String name = "Thisara C Prasanga";
+              int age = 22;
+              GoRouter.of(context).go("/user/$name / $age");
             },
             child: Text("Go to User Page"),
           ),

@@ -40,14 +40,24 @@ class RouterClass {
         ],
       ),
 
-      GoRoute(
-        path: "/user",
-        builder: (context, state) {
-          final String name =
-              (state.extra as Map<String, dynamic>)["name"] as String;
-          final age = (state.extra as Map<String, dynamic>)["age"] as int;
+      //Extra parameter
+      //       GoRoute(
+      //         path: "/user",
+      //         builder: (context, state) {
+      //           final String name =
+      //               (state.extra as Map<String, dynamic>)["name"] as String;
+      //           final age = (state.extra as Map<String, dynamic>)["age"] as int;
 
-          return UserPage(userName: name, age: age);
+      //           return UserPage(userName: name, age: age);
+      //         },
+      //       ),
+      GoRoute(
+        path: "/user/:name/:age",
+        builder: (context, state) {
+          return UserPage(
+            userName: state.pathParameters["name"]!,
+            age: int.parse(state.pathParameters["age"]!),
+          );
         },
       ),
     ],
