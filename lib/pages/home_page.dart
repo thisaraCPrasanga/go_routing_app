@@ -13,6 +13,8 @@ class HomePage extends StatelessWidget {
 
         children: [
           Text("Home page"),
+
+          //navigate using named route
           ElevatedButton(
             onPressed: () {
               GoRouter.of(context).goNamed(RouteNamesClass.profile);
@@ -29,6 +31,17 @@ class HomePage extends StatelessWidget {
               GoRouter.of(context).go("/user/$name / $age");
             },
             child: Text("Go to User Page"),
+          ),
+
+          ElevatedButton(
+            onPressed: () {
+              String name = "Thisara C Prasanga";
+              int age = 22;
+              GoRouter.of(
+                context,
+              ).goNamed(RouteNamesClass.age, queryParameters: {"age": "24"});
+            },
+            child: Text("Go to Age Page"),
           ),
         ],
       ),
