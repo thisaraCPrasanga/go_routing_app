@@ -43,8 +43,11 @@ class RouterClass {
       GoRoute(
         path: "/user",
         builder: (context, state) {
-          final String name = state.extra as String;
-          return UserPage(userName: name);
+          final String name =
+              (state.extra as Map<String, dynamic>)["name"] as String;
+          final age = (state.extra as Map<String, dynamic>)["age"] as int;
+
+          return UserPage(userName: name, age: age);
         },
       ),
     ],
