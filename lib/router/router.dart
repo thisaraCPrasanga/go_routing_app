@@ -4,6 +4,7 @@ import 'package:go_routing_app/pages/child_page.dart';
 import 'package:go_routing_app/pages/home_page.dart';
 import 'package:go_routing_app/pages/profile_page.dart';
 import 'package:go_routing_app/pages/user.dart';
+import 'package:go_routing_app/router/route_names.dart';
 
 class RouterClass {
   final router = GoRouter(
@@ -24,7 +25,7 @@ class RouterClass {
         },
       ),
       GoRoute(
-        name: "profile",
+        name: RouteNamesClass.profile,
         path: "/profile",
         builder: (context, state) {
           return ProfilePage();
