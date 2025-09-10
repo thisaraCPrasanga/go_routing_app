@@ -18,6 +18,14 @@ class HomePage extends StatelessWidget {
             },
             child: Text("Go to Profile Page"),
           ),
+
+          //Go to user page
+          ElevatedButton(
+            onPressed: () {
+              GoRouter.of(context).push("/user", extra: "Thisara C Prasanga");
+            },
+            child: Text("Go to User Page"),
+          ),
         ],
       ),
     );
