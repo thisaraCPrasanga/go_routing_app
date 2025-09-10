@@ -18,6 +18,13 @@ class ProfilePage extends StatelessWidget {
             },
             child: Text("Go to Home Page"),
           ),
+
+          ElevatedButton(
+            onPressed: () {
+              GoRouter.of(context).go("/profile/child");
+            },
+            child: Text("Go to child Page"),
+          ),
         ],
       ),
     );
